@@ -1,22 +1,19 @@
 import express, { Express, Request, Response } from 'express';
-import models from '../models/models'
 import dotenv from 'dotenv';
+import TodoRoute from '../route/todolist'
+import cors from 'cors'
 
-const {TodoList}  = models
 
 dotenv.config();
 
 const app: Express = express();
+app.use(express.json())
+app.use(cors())
 
 
 const port = 3000;
 
-app.get('/coba', async (req: Request, res: Response) => {
-    const data = await TodoList.create({
-        name:"ian"
-    })
-    res.status(200).json(data)
-});
+app.use(TodoRoute);
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
