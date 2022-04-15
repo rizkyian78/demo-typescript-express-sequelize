@@ -3,7 +3,7 @@
 import { DataTypes, UUIDV4 } from 'sequelize';
 import { sequelize } from '.';
 
-import {TodoListInstance} from "../types/todolist.types"
+import {TodoListInstance} from "../../types/todolist.types"
 
 const TodoList = sequelize.define<TodoListInstance>(
   'Todolist',
