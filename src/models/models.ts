@@ -1,8 +1,8 @@
-import TodoList from './todolist'
+import User from './user'
 
 
 const models = {
-    TodoList,
+    User,
 }
 
 export default models

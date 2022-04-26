@@ -3,10 +3,10 @@
 import { DataTypes, UUIDV4 } from 'sequelize';
 import { sequelize } from '.';
 
-import {TodoListInstance} from "../../types/todolist.types"
+import {UserInstance} from "../types/user.types"
 
-const TodoList = sequelize.define<TodoListInstance>(
-  'Todolist',
+const User = sequelize.define<UserInstance>(
+  'Users',
   {
     id: {
       allowNull: false,
@@ -21,4 +21,4 @@ const TodoList = sequelize.define<TodoListInstance>(
   }
 );
 
-export default TodoList;
+export default User;
