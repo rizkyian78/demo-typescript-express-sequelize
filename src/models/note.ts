@@ -3,11 +3,11 @@
 import { DataTypes, UUIDV4 } from 'sequelize';
 import { sequelize } from '.';
 
-import {UserInstance} from "../types/user.types"
-import Note from './note';
+import {NoteInstance} from "../types/note.types"
+import User from './user';
 
-const User = sequelize.define<UserInstance>(
-  'Users',
+const Note = sequelize.define<NoteInstance>(
+  'Notes',
   {
     id: {
       allowNull: false,
@@ -19,10 +19,11 @@ const User = sequelize.define<UserInstance>(
       allowNull: true,
       type: DataTypes.STRING,
     },
+    userId: {
+      allowNull: true,
+      type: DataTypes.STRING,
+    }
   }
 );
 
-
-User.hasMany(Note, {foreignKey: "userId",as: "nota"})
-
-export default User;
+export default Note;
